@@ -4,10 +4,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardCollector2", "CardCollector2\CardCollector2.csproj", "{083D334A-ABCB-4CAA-8B0F-17074DD160E7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4571DF13-661C-4ECC-91CB-9EB1823D7620} = {4571DF13-661C-4ECC-91CB-9EB1823D7620}
+		{0C791BEA-BB18-4574-B769-9C87B8D164A8} = {0C791BEA-BB18-4574-B769-9C87B8D164A8}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardCollectorData", "CardCollectorData\CardCollectorData.csproj", "{4571DF13-661C-4ECC-91CB-9EB1823D7620}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardCollectorLogic", "CardCollectorLogic\CardCollectorLogic.csproj", "{0C791BEA-BB18-4574-B769-9C87B8D164A8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4571DF13-661C-4ECC-91CB-9EB1823D7620} = {4571DF13-661C-4ECC-91CB-9EB1823D7620}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

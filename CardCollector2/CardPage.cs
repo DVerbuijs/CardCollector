@@ -15,7 +15,7 @@ namespace CardCollector2
         public CardPage(string msg)
         {
             InitializeComponent();
-            Console.WriteLine(msg);
+            Console.WriteLine("MSG "+msg);
         }
     }
 }

@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using CardCollectorData;
 
 namespace CardCollector2
 {
     public partial class Form1 : Form
     {
         private Form activeContent = null;
+        private List<GenBlock> genBlocks = new List<GenBlock>();
         public Form1()
         {
             InitializeComponent();
@@ -21,6 +23,14 @@ namespace CardCollector2
             ConfigurationManager.AppSettings.Get("CS").ToString() + " " +
             ConfigurationManager.AppSettings.Get("DB").ToString() + " " +
             ConfigurationManager.AppSettings.Get("Table").ToString());
+
+           
+            GenBlock genBlock2 = new GenBlock(pnlMenu, this,2,8,15,"Gen 2");
+            GenBlock genBlock = new GenBlock(pnlMenu, this,1,1,7,"Gen 1");
+            
+            genBlocks.Add(genBlock);
+            genBlocks.Add(genBlock2);
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -48,6 +58,22 @@ namespace CardCollector2
         private void btnPageTest_Click(object sender, EventArgs e)
         {
             OpenContent(new CardPage("Hello Page"));
+        }
+
+        public void OpenCardPage(Set set)
+        {
+            lbSet.Text = set.ToString();
+            OpenContent(new CardPage(set.ToString()));
+
+        }
+
+        public int closeOther(int num)
+        {
+            foreach (GenBlock item in genBlocks)
+            {
+                item.CloseSubPanel(num);
+            }
+            return 0;
         }
     }
 }
